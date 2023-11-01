@@ -9,5 +9,3 @@ def iter_range(first, last)
 end
 
 # p iter_range(2, 10)
-
-
