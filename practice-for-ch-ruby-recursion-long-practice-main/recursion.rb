@@ -50,10 +50,28 @@ p expo(3, 4)
 p expo(3, 3)
 p exponentiation(3, 3)
 
-class Array
+# class Array
 
 def deep_dup(arr)
-    
+    dup_array = []
+    arr.each do |ele|
+        if !ele.is_a?(Array)
+            dup_array << ele  
+        else 
+            dup_array << deep_dup(ele)
+        end
+    end
+    dup_array
 end
 
-end
+# end
+arr = [1,[2],[3,[4]]]
+p arr.object_id
+b = deep_dup(arr)
+p b  
+p b.object_id
+p b[1].object_id
+p arr[1].object_id
+
+
+
