@@ -73,5 +73,14 @@ p b.object_id
 p b[1].object_id
 p arr[1].object_id
 
+def rec_fib(n)
+    return [] if n <= 0
+    return [0] if n == 1
+    return [0, 1] if n == 2
+
+    rec_fib(n-1) << rec_fib(n-1)[-1] + rec_fib(n-2)[-2]
+    
+end
 
 
+p rec_fib(5)
